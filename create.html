@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <link rel="stylesheet" 
+         type="text/css" 
+         href="style.css"
+        />
+		<script type="text/javascript">
+            function validate()
+            {
+                var username= document.getElementById("uname");
+                var email= document.getElementById("email");
+				var pass= document.getElementById("pass");
+				var pcode= document.getElementById("pin");
+				var mobile= document.getElementById("mobno");
+                var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+                if(username.value ==""||mobile.value=="" || email.value =="" || pass.value =="" || pcode.value =="")
+                {
+                    alert("fill all fields")
+                    return false;
+                }
+                else if(pass.value<=5 || pass.value>=10)
+                {
+                    alert("pass invalid")
+                    return false;
+                }
+                else if(!email.value.match(mailformat))
+				{				
+                    alert("wrong email address")
+                    return false;
+                }
+                else if(pcode.value<100000|| pcode.value>999999)
+                {
+                    alert("invalid pincode")
+                    return false;
+                }
+				else if(mobile.value<100000000 || mobile.value>9999999999)
+				{
+					alert("invalid phone number")
+					return false;
+				}
+				else
+				{
+                    alert("User logged in")
+					return true;
+				}
+				
+            }       
+        </script>
+    </head>
+    <body>
+        <br>
+        <div>
+            <center id="logo"><img src="logo.png" width="150px" height="150px"/></center>
+        </div>
+        <hr></hr>
+        
+        <center>
+        <div class="background">
+            
+        <form onSubmit=" return validate();" action="login.html">
+            <label><h3>Create</h3> </label>
+            <br>
+            <input id="uname" placeholder="Username" type="text"/> 
+            <br><br>
+            <input id="email" placeholder="abc@email.com" type="email"/>
+            <br><br>
+            <input id="pass" placeholder="password" type="address"/>
+			<br><br>
+			<input id="pin" placeholder="Pincode" type="pin"/>
+			<br> <br>
+			<input id="mobno" placeholder="Phone No." type="phone"/>
+			<br><br>
+			<button type="submit" >Submit</button>
+			
+        </form>
+        </div>
+        </center>
+        
+    </body>
+</html>

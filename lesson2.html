@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <link rel="stylesheet" 
+         type="text/css" 
+         href="style.css"
+        />
+        <script type="text/javascript">
+            function validate()
+            {
+                var username= document.getElementById("uname");
+                var password= document.getElementById("pass");
+
+                if(username.value ==""||password.value=="")
+                {
+                    alert("No blank")
+                    return false;
+                }
+                else if(username.value=="Ratnesh Patil" && password.value=="123456789")
+                {
+                    alert("Welcome Mr Ratnesh Patil")
+                    true;
+                }
+                else
+                {
+                    alert("wrong password")
+                    return false;
+                }
+            }       
+        </script>
+    </head>
+    <body>
+        <br>
+        <div>
+            <center><img src="logo.png" width="150px" height="150px"/></center>
+        </div>
+        <hr></hr>
+        <br>
+        <br>
+        <center>
+        <div class="background">
+            <br>
+            <br>
+        <form onsubmit="return validate()" action="index.html">
+            <label>Enter your details</label>
+            <br>
+            <br>
+            <input id="uname" placeholder="Username" type="text"/>
+            <br><br>
+            <input id="pass" placeholder="Password" type="password"/>
+            <br><br>
+            <button type="submit">Login In</button>
+        </form>
+        </div>
+        </center>
+        
+    </body>
+</html>
